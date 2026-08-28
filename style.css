@@ -1,0 +1,387 @@
+@font-face {
+    font-family: 'Retro Computer';
+    src: url('retro_computer_personal_use.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mokoto';
+    src: url('Mokoto.ttf') format('truetype');
+}
+
+:root {
+    --neon-red: #ff0055;
+    --dark-bg: #020202;
+    --surface-bg: #090909;
+    --text-main: #f5f5f5;
+    --font-retro: 'Retro Computer', 'Mokoto', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+::selection {
+    background: var(--neon-red);
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+
+html {
+    font-size: 65%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--dark-bg);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 0, 85, 0.15) 0%, transparent 50%),
+        linear-gradient(rgba(255, 0, 85, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 85, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 50px 50px, 50px 50px;
+    color: var(--text-main);
+    font-family: var(--font-retro);
+}
+
+header {
+    margin-top: 0;
+    padding: 2.5rem 9%;
+    background: rgba(2, 2, 2, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 3px solid var(--neon-red);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-family: var(--font-retro);
+    font-size: 4.5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    text-shadow: 4px 4px 0px var(--neon-red), 0 0 15px var(--neon-red);
+    transition: 0.3s ease;
+}
+
+header h1:hover {
+    transform: skewX(-15deg) scale(1.05);
+    text-shadow: 6px 6px 0px var(--neon-red), 0 0 30px var(--neon-red);
+}
+
+header p {
+    font-family: var(--font-retro);
+    font-size: 1.6rem;
+    color: #aaa;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 5rem;
+}
+
+nav br {
+    display: none;
+}
+
+nav a {
+    font-family: var(--font-retro);
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: 0.3s ease;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red);
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--neon-red);
+    text-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+section {
+    min-height: 100vh;
+    padding: 12rem 9% 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-family: var(--font-retro);
+    font-size: 6.5rem;
+    color: transparent;
+    -webkit-text-stroke: 3px var(--neon-red);
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    margin-bottom: 6rem;
+    position: relative;
+    text-shadow: 0 0 25px rgba(255, 0, 85, 0.3);
+}
+
+h3 {
+    font-family: var(--font-retro);
+    font-size: 3.2rem;
+    margin: 4rem 0 2rem;
+    color: white;
+    border-left: 8px solid var(--neon-red);
+    padding-left: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+p, li, figcaption, label, input, textarea, button, footer, small {
+    font-family: var(--font-retro);
+}
+
+p, li, figcaption {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+article {
+    max-width: 850px;
+    width: 100%;
+}
+
+ul {
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+    list-style-type: square;
+}
+
+li::marker {
+    color: var(--neon-red);
+    font-size: 2.2rem;
+}
+
+strong, em {
+    color: var(--neon-red);
+    font-style: normal;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 0, 85, 0.4);
+}
+
+a {
+    color: var(--neon-red);
+    transition: 0.3s ease;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 0, 85, 0.3);
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    color: white;
+    text-decoration-color: var(--neon-red);
+    text-shadow: 0 0 10px var(--neon-red);
+}
+
+.profil-biodata {
+    background-color: var(--surface-bg);
+    max-width: 850px;
+    width: 100%;
+    padding: 4rem 5rem;
+    margin: 4rem 0;
+    border-radius: 0;
+    border: 2px solid #333;
+    border-left: 8px solid var(--neon-red);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 0, 85, 0.1);
+}
+
+.profil-biodata p {
+    font-family: var(--font-retro);
+    font-size: 1.8rem;
+    line-height: 1.9;
+    color: var(--text-main);
+    font-weight: 400;
+    text-align: justify;
+}
+
+figure img {
+    border-radius: 0;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(140%);
+    border: 4px solid #222;
+    box-shadow: 20px 20px 0px var(--neon-red);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 3rem;
+}
+
+figure img:hover {
+    filter: grayscale(0%) contrast(110%) saturate(130%);
+    transform: translate(-10px, -10px) scale(1.05);
+    box-shadow: 30px 30px 0px var(--neon-red), 0 0 40px rgba(255, 0, 85, 0.6);
+    border-color: var(--neon-red);
+}
+
+form {
+    background-color: var(--surface-bg);
+    padding: 5rem;
+    border: 2px solid #222;
+    border-top: 8px solid var(--neon-red);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 20px rgba(255,0,85,0.1);
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 850px;
+}
+
+form div {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+label {
+    font-family: var(--font-retro);
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    color: #ccc;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.8rem;
+    margin-top: 1.2rem;
+    background-color: #000;
+    border: 2px solid #333;
+    border-radius: 0;
+    color: white;
+    font-size: 1.6rem;
+    font-family: var(--font-retro);
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--neon-red);
+    box-shadow: inset 8px 0 0 var(--neon-red), 0 0 15px rgba(255,0,85,0.3);
+    background-color: #0a0003;
+}
+
+input[type="color"] {
+    padding: 0.5rem;
+    height: 60px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    accent-color: var(--neon-red);
+}
+
+button[type="submit"] {
+    font-family: var(--font-retro);
+    display: inline-block;
+    padding: 2rem 5rem;
+    background-color: transparent;
+    font-size: 2.2rem;
+    color: var(--neon-red);
+    letter-spacing: 0.4rem;
+    border: 3px solid var(--neon-red);
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    width: 100%;
+    box-shadow: inset 0 0 0 0 var(--neon-red);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--neon-red);
+    color: white;
+    box-shadow: 0 0 30px var(--neon-red), inset 0 0 10px rgba(255,255,255,0.5);
+    letter-spacing: 0.7rem;
+    transform: translateY(-5px);
+}
+
+footer {
+    padding: 5rem 9%;
+    background-color: var(--surface-bg);
+    border-top: 2px solid #222;
+    margin-top: 12rem;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+footer p, footer small {
+    font-family: var(--font-retro);
+    font-size: 1.6rem;
+    color: #777;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+}
+
+@media (max-width: 995px) {
+    html {
+        font-size: 55%;
+    }
+    
+    header {
+        position: relative;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--surface-bg);
+        border: 2px solid #333;
+        border-left: 8px solid var(--neon-red);
+        width: 100%;
+        margin-top: 3rem;
+        padding: 3rem;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2.5rem;
+        margin: 2rem 0;
+    }
+    
+    figure img {
+        width: 100%;
+        height: auto;
+        box-shadow: 15px 15px 0px var(--neon-red);
+    }
+    
+    .profil-biodata {
+        padding: 3rem;
+    }
+
+    form {
+        padding: 3rem;
+    }
+}
